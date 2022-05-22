@@ -87,8 +87,8 @@ def run(e):
                     e.log.info("elapsed time: {:.3}(h), automatically exiting the program...".format(e.elapsed_time))
                     train_batch.save()
                     model.save(
-                        dev_bleu=BEST_DEV_BLEU,
-                        test_bleu=TEST_BLEU,
+                        dev_bleu=BEST_DEV_LOSS,
+                        test_bleu=TEST_LOSS,
                         iteration=true_it,
                         epoch=epoch,
                         name="latest")
