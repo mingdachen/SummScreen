@@ -48,12 +48,12 @@ def run(e):
 
     start_epoch = true_it = 0
     if e.config.resume:
-        start_epoch, _, BEST_DEV_BLEU, TEST_BLEU = \
+        start_epoch, _, BEST_DEV_LOSS, TEST_LOSS = \
             model.load(name="latest")
         e.log.info(
             "resumed from previous checkpoint: start epoch: {}, "
-            "iteration: {}, best dev bleu: {:.3f}, test bleu: {:.3f}."
-            .format(start_epoch, true_it, BEST_DEV_BLEU, TEST_BLEU))
+            "iteration: {}, best dev loss: {:.3f}, test loss: {:.3f}."
+            .format(start_epoch, true_it, BEST_DEV_LOSS, TEST_LOSS))
 
     e.log.info(model)
     e.log.info("*" * 25 + " MODEL INITIALIZATION " + "*" * 25)
